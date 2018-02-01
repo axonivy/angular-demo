@@ -40,10 +40,7 @@
 
       <mat-card fxFlex="100">
         <mat-icon svgIcon="avatars:svg-11" class="avatar"></mat-icon>
-        <h2>{{selectedTask.name}}</h2>
-        <p>Task Id: {{selectedTask.id}}</p>
-        <p>State: {{selectedTask.state}}</p>
-        <p>Priority: {{selectedTask.priority}}</p>
+        <h2>#{{selectedTask.id}} {{selectedTask.name}}</h2>
         <p>{{selectedTask.description}}</p>
       </mat-card>
 
