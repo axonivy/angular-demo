@@ -18,9 +18,13 @@ Beta
 Build the code for the integration into the ivy Project with:
 
     cd spa/
+    npm install
     npm run build-prod
 
+## Running the ivy Project
 After building you can open the ivy project `AngularWfDemo` and execute the `start.ivp` Link to start the Angular based web frontend. On the fronted you can create a new ivy task, which will be displayed in the task list of the SPA and of the designer. These tasks have a HTML Dialog attached which is displayed inside an iframe.
+
+![Angular project integrated to ivy](screenshot-angular-wf-demo.png)
 
 ## Development
 The backend in the `AngularWfDemo` can be developed with the Axon.ivy Designer. To access the provided REST services while developing the ivy Designer needs to be started and running on Port 8081.
