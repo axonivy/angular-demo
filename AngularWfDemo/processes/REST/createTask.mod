@@ -55,6 +55,7 @@ param.taskName=in.taskName;
 ck0 f3 responseActionDecl 'com.axonivy.ivy.angularwfdemo.rest.CreateTaskData out;
 ' #txt
 ck0 f3 responseMappingAction 'out=in;
+out.createdTask=triggeredTask;
 ' #txt
 ck0 f3 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <elementInfo>

@@ -8,6 +8,7 @@ import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
 import javax.ws.rs.core.UriBuilder;
 
+import ch.ivyteam.ivy.environment.Ivy;
 import ch.ivyteam.ivy.process.call.SubProcessCall;
 import ch.ivyteam.ivy.workflow.ITask;
 
@@ -23,6 +24,8 @@ public class TaskCreatorService {
 				.withParam("taskDescription", taskToCreate.getTaskDescription())
 				.call()
 				.get("createdTask", ITask.class);
+		
+		Ivy.log().info("Created task with id: " + task.getId());
 
 		String appRelativeUri = "workflow/task/{id}";
 		return Response
