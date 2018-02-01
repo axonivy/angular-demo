@@ -22,10 +22,12 @@ The frontend in the spa/ folder can be developed with any IDE/Editor suited for 
 
 Access the SPA on http://localhost:4200/.
 
-## Building
+## Building the Angular SPA
 Build the code for the integration into the ivy Project with:
 
+    cd spa/
     npm run build-prod
 
 ## Troubleshooting
-If a Basic Authentication dialog pops up use following test credentials: user/user.
+* If a Basic Authentication dialog pops up use following test credentials: user/user.
+* If a file like angular/index.html is not found you will most likely have to build the SPA first. (It will out the SPA to `/webContent/angular/`)
