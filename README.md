@@ -2,6 +2,8 @@
 
 Demonstrates how Axon.ivy can be used in conjunction with client-side JavaScript Frameworks like Angular, React.
 
+Beta
+
 ## Technologies
 * Backend: Axon.ivy Digital Business Platform 7.0 and later
 * Frontend: Angular 5 + Material Design
@@ -24,3 +26,6 @@ Access the SPA on http://localhost:4200/.
 Build the code for the integration into the ivy Project with:
 
     npm run build-prod
+
+## Troubleshooting
+If a Basic Authentication dialog pops up use following test credentials: user/user.
