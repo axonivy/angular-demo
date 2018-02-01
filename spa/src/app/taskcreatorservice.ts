@@ -11,10 +11,11 @@ export class TaskCreatorService {
     constructor(private http: HttpClient, private router: Router) {
     }
 
-    createTask(taskName: string): Observable<Response> {
+    createTask(taskName: string, taskDescription: string): Observable<Response> {
 
         const taskToCreate: TaskToCreate = {
-            taskName: taskName
+            taskName: taskName,
+            taskDescription: taskDescription
         }
         // See: https://angular.io/guide/http
         const body = JSON.stringify(taskToCreate);
@@ -36,4 +37,5 @@ export class TaskCreatorService {
 
 interface TaskToCreate {
     taskName: string;
+    taskDescription: string;
 }

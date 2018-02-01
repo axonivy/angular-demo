@@ -18,8 +18,9 @@ ck0 @Trigger f3 '' #zField
 ck0 @PushWFArc f4 '' #zField
 ck0 @PushWFArc f2 '' #zField
 >Proto ck0 ck0 createTask #zField
-ck0 f0 inParamDecl '<java.lang.String taskName> param;' #txt
-ck0 f0 inParamTable 'out.taskName=param.taskName;
+ck0 f0 inParamDecl '<java.lang.String taskDescription,java.lang.String taskName> param;' #txt
+ck0 f0 inParamTable 'out.taskDescription=param.taskDescription;
+out.taskName=param.taskName;
 ' #txt
 ck0 f0 outParamDecl '<ch.ivyteam.ivy.workflow.ITask createdTask> result;
 ' #txt
@@ -27,33 +28,33 @@ ck0 f0 outParamTable 'result.createdTask=in.createdTask;
 ' #txt
 ck0 f0 actionDecl 'com.axonivy.ivy.angularwfdemo.rest.CreateTaskData out;
 ' #txt
-ck0 f0 callSignature call(String) #txt
+ck0 f0 callSignature call(String,String) #txt
 ck0 f0 type com.axonivy.ivy.angularwfdemo.rest.CreateTaskData #txt
 ck0 f0 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <elementInfo>
     <language>
-        <name>call(String)</name>
-        <nameStyle>12,5,7
+        <name>call(String,String)</name>
+        <nameStyle>19,5,7
 </nameStyle>
     </language>
 </elementInfo>
 ' #txt
-ck0 f0 81 49 30 30 -29 17 #rect
+ck0 f0 81 49 30 30 -47 17 #rect
 ck0 f0 @|StartSubIcon #fIcon
 ck0 f1 type com.axonivy.ivy.angularwfdemo.rest.CreateTaskData #txt
 ck0 f1 337 49 30 30 0 15 #rect
 ck0 f1 @|EndSubIcon #fIcon
 ck0 f3 type com.axonivy.ivy.angularwfdemo.rest.CreateTaskData #txt
-ck0 f3 processCall REST/createTestTask:createTestTask(String) #txt
+ck0 f3 processCall REST/createTestTask:createTestTask(String,String) #txt
 ck0 f3 doCall true #txt
-ck0 f3 requestActionDecl '<java.lang.String taskName> param;
+ck0 f3 requestActionDecl '<java.lang.String taskDescription,java.lang.String taskName> param;
 ' #txt
-ck0 f3 requestMappingAction 'param.taskName=in.taskName;
+ck0 f3 requestMappingAction 'param.taskDescription=in.taskDescription;
+param.taskName=in.taskName;
 ' #txt
 ck0 f3 responseActionDecl 'com.axonivy.ivy.angularwfdemo.rest.CreateTaskData out;
 ' #txt
 ck0 f3 responseMappingAction 'out=in;
-out.createdTask=triggeredTask;
 ' #txt
 ck0 f3 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <elementInfo>

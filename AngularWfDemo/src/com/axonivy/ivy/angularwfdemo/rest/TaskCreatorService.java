@@ -19,7 +19,9 @@ public class TaskCreatorService {
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response create(TaskToCreate taskToCreate) {
 		ITask task = SubProcessCall.withPath("REST/createTask")
-				.withParam("taskName", taskToCreate.taskName).call()
+				.withParam("taskName", taskToCreate.taskName)
+				.withParam("taskDescription", taskToCreate.getTaskDescription())
+				.call()
 				.get("createdTask", ITask.class);
 
 		String appRelativeUri = "workflow/task/{id}";
@@ -35,9 +37,14 @@ public class TaskCreatorService {
 	
 	public static class TaskToCreate {
 		private String taskName;
+		private String taskDescription;
 
 		public String getTaskName() {
 			return taskName;
+		}
+
+		public String getTaskDescription() {
+			return taskDescription;
 		}
 	}
 

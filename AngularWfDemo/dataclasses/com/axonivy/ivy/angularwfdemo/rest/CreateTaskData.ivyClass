@@ -4,3 +4,5 @@ taskName String #field
 taskName PERSISTENT #fieldModifier
 createdTask ch.ivyteam.ivy.workflow.ITask #field
 createdTask PERSISTENT #fieldModifier
+taskDescription String #field
+taskDescription PERSISTENT #fieldModifier

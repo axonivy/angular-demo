@@ -79,8 +79,7 @@ export class AppComponent implements OnInit, OnDestroy {
       .filter(result => !!result)
       .subscribe(task => {
 
-        console.log(task);
-        this.taskCreatorService.createTask(task.name)
+        this.taskCreatorService.createTask(task.name, task.description)
           .subscribe(r => {
             console.log(`task creation status code: ${r}`)
             // TODO error handling
