@@ -1,11 +1,11 @@
-import {Component, OnInit, OnDestroy, isDevMode} from '@angular/core';
-import {MatIconRegistry, MatDialog} from '@angular/material';
-import {DomSanitizer} from '@angular/platform-browser';
+import { Component, OnInit, OnDestroy, isDevMode } from '@angular/core';
+import { MatIconRegistry, MatDialog } from '@angular/material';
+import { DomSanitizer } from '@angular/platform-browser';
 import { Router, ActivatedRoute } from '@angular/router';
 
 import 'rxjs/add/operator/filter';
 
-import {DialogComponent} from './dialog/dialog.component';
+import { DialogComponent } from './dialog/dialog.component';
 import { TaskService } from 'app/taskservice';
 import { TaskCreatorService } from 'app/taskcreatorservice';
 
@@ -56,10 +56,6 @@ export class AppComponent implements OnInit, OnDestroy {
     });
   }
 
-  startProcess() {
-    console.log(this.selectedTask.fullRequestPath);
-  }
-
   iframeUrl() {
     let urlToShow = this.selectedTask.fullRequestPath;
     if (isDevMode()) {
@@ -74,7 +70,7 @@ export class AppComponent implements OnInit, OnDestroy {
     this.sub.unsubscribe();
   }
 
-  openAdminDialog() {
+  openCreateTaskDialog() {
     this.dialog.open(DialogComponent).afterClosed()
       .filter(result => !!result)
       .subscribe(task => {
