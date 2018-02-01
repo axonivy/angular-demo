@@ -38,17 +38,17 @@
     </mat-sidenav>
     <div class="content" fxLayout="row" fxLayout.sm="column" fxLayoutGap="16px">
 
-      <mat-card fxFlex="100">
+      <mat-card *ngIf="selectedTask != null" fxFlex="100">
         <mat-icon svgIcon="avatars:svg-11" class="avatar"></mat-icon>
         <h2>#{{selectedTask.id}} {{selectedTask.name}}</h2>
         <p>{{selectedTask.description}}</p>
       </mat-card>
-
-      <div class="procedure-details">
-      <iframe [src]='iframeUrl()' align="middle" width="1000" height="800" frameborder="0">
-        <p>Your browser does not support iframes.</p>
-      </iframe>
-    </div>
+      
+      <div *ngIf="selectedTask != null" class="procedure-details">
+        <iframe [src]='iframeUrl()' align="middle" width="1000" height="800" frameborder="0">
+          <p>Your browser does not support iframes.</p>
+        </iframe>
+      </div>
 
     </div>
   </mat-sidenav-container>

@@ -18,19 +18,7 @@ export class AppComponent implements OnInit, OnDestroy {
 
   tasks: Task[] = [];
 
-  selectedTask: Task = {
-    id: 6,
-    name: 'name',
-    description: 'desc',
-    activatorName: '',
-    fullRequestPath: '',
-    case: null,
-    expiryTimeStamp: '',
-    offline: false,
-    priority: 2,
-    startTimeStamp: '',
-    state: 1
-  };
+  selectedTask: Task = null;
 
   sub: any;
 
