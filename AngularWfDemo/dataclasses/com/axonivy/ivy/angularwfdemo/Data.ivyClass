@@ -1,0 +1,6 @@
+Data #class
+com.axonivy.ivy.angularwfdemo #namespace
+name String #field
+name PERSISTENT #fieldModifier
+country String #field
+country PERSISTENT #fieldModifier

@@ -1,0 +1,64 @@
+<div fxLayout="column" fxFlex [class.dark-theme]="isDarkTheme">
+
+  <mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <span>Angular Workflow Demo</span>
+
+      <!-- Filler that pushes the menu button to the end of the toolbar -->
+      <span fxFlex></span>
+
+      <button mat-button (click)="openAdminDialog()">
+        <mat-icon>add</mat-icon>
+        Create Task
+      </button>
+      <button mat-icon-button [matMenuTriggerFor]="themeMenu">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+
+    </mat-toolbar-row>
+  </mat-toolbar>
+
+  <mat-sidenav-container fxFlex>
+    <mat-sidenav mode="side" opened>
+
+      <mat-tab-group>
+        <mat-tab label="Tasks">
+          <mat-nav-list>
+            <mat-list-item *ngFor="let task of tasks" (click)="selectedTask = task">
+              <mat-icon matListAvatar svgIcon="avatars:svg-11" class="avatar"></mat-icon>
+              <span>{{task.name}}</span>
+            </mat-list-item>
+          </mat-nav-list>
+        </mat-tab>
+        <mat-tab label="Settings">
+          <span>Settings</span>
+        </mat-tab>
+      </mat-tab-group>
+
+    </mat-sidenav>
+    <div class="content" fxLayout="row" fxLayout.sm="column" fxLayoutGap="16px">
+
+      <mat-card fxFlex="100">
+        <mat-icon svgIcon="avatars:svg-12" class="avatar"></mat-icon>
+        <h2>{{selectedTask.name}}</h2>
+        <p>Task Id: {{selectedTask.id}}</p>
+        <p>State: {{selectedTask.state}}</p>
+        <p>Priority: {{selectedTask.priority}}</p>
+        <p>{{selectedTask.description}}</p>
+      </mat-card>
+
+      <div class="procedure-details">
+      <iframe [src]='iframeUrl()' align="middle" width="1000" height="800" frameborder="0">
+        <p>Your browser does not support iframes.</p>
+      </iframe>
+    </div>
+
+    </div>
+  </mat-sidenav-container>
+
+  <!-- <button mat-raised-button (click)="createTask()">Create Task</button> -->
+  <mat-menu #themeMenu x-position="before">
+    <button mat-menu-item (click)="isDarkTheme = !isDarkTheme">Toggle Theme</button>
+  </mat-menu>
+
+</div>

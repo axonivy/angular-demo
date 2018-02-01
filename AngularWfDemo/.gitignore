@@ -1,0 +1,13 @@
+# Mac
+.DS_Store
+
+
+log/
+target/
+
+#generated
+classes/*
+src_dataClasses/*
+src_wsproc/*
+/classes/
+/lib/

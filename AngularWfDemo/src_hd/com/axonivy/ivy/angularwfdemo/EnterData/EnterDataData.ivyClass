@@ -1,0 +1,6 @@
+EnterDataData #class
+com.axonivy.ivy.angularwfdemo.EnterData #namespace
+name String #field
+name PERSISTENT #fieldModifier
+country String #field
+country PERSISTENT #fieldModifier
