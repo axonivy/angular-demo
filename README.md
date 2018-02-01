@@ -16,7 +16,7 @@ Beta
 ## Development
 The backend can be developed with the Axon.ivy Designer. To access the provided REST services while developing the ivy Designer needs to be started and running on Port 8081.
 
-The frontend in the spa/ folder can be developed with any IDE/Editor suited for TypeScript development (e.g. VS Code). Run following command in the spa/ folder to start the development server (proxies Request to http://localhost:4200/ivy/ to http://localhost:8081/ivy/):
+The frontend in the spa/ folder can be developed with any IDE/Editor suited for TypeScript development (e.g. VS Code). Run following command in the spa/ folder to start the development server (proxies requests to http://localhost:4200/ivy/ to http://localhost:8081/ivy/):
 
     npm start
 
