@@ -22,7 +22,7 @@ Build the code for the integration into the ivy Project with (make sure to leave
     npm run build-prod
 
 ## Running the ivy Project
-After building you can import the ivy project `AngularWfDemo` and execute the `start.ivp` Link to start the Angular based web frontend. Via "Create Task" you can trigger a REST request in ivy that will create a new ivy task, which will be displayed in the task list of the SPA and of the designer. These tasks have a HTML Dialog attached which is displayed inside an iframe.
+After building you can import the ivy project `AngularWfDemo` (do not copy to workspace) and execute the `start.ivp` Link to start the Angular based web frontend. Via "Create Task" you can trigger a REST request in ivy that will create a new ivy task, which will be displayed in the task list of the SPA and of the designer. These tasks have a HTML Dialog attached which is displayed inside an iframe.
 
 ![Angular project integrated to ivy](screenshot-angular-wf-demo.png)
 
@@ -39,4 +39,4 @@ Access the SPA on http://localhost:4200/.
 
 ## Troubleshooting
 * If a Basic Authentication dialog pops up use following test credentials: user/user.
-* If a file like angular/index.html is not found you will most likely have to build the SPA first. (It will output the SPA to `/webContent/angular/`)
+* If a file like angular/index.html is not found you will most likely have to build the SPA first. (It will output the built SPA to `/webContent/angular/`)
