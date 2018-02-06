@@ -15,26 +15,28 @@ Beta
 * Angular Cli: `npm install -g @angular/cli`
 
 ## Building the Angular SPA
-Build the code for the integration into the ivy Project with:
+Build the code for the integration into the ivy Project with (make sure to leave both projects side-by-side):
 
     cd spa/
     npm install
     npm run build-prod
 
 ## Running the ivy Project
-After building you can open the ivy project `AngularWfDemo` and execute the `start.ivp` Link to start the Angular based web frontend. On the fronted you can create a new ivy task, which will be displayed in the task list of the SPA and of the designer. These tasks have a HTML Dialog attached which is displayed inside an iframe.
+After building you can import the ivy project `AngularWfDemo` and execute the `start.ivp` Link to start the Angular based web frontend. Via "Create Task" you can trigger a REST request in ivy that will create a new ivy task, which will be displayed in the task list of the SPA and of the designer. These tasks have a HTML Dialog attached which is displayed inside an iframe.
 
 ![Angular project integrated to ivy](screenshot-angular-wf-demo.png)
 
 ## Development
 The backend in the `AngularWfDemo` can be developed with the Axon.ivy Designer. To access the provided REST services while developing the ivy Designer needs to be started and running on Port 8081.
 
-The frontend in the `spa/` folder can be developed with any IDE/Editor suited for TypeScript development (e.g. VS Code). Run following command in the `spa/` folder to start the development server (proxies requests to http://localhost:4200/ivy/ to http://localhost:8081/ivy/):
+The frontend in the `spa/` folder can be developed with any IDE/Editor suited for TypeScript development (e.g. VS Code). Run following command in the `spa/` folder to start the development server:
 
     npm start
 
 Access the SPA on http://localhost:4200/.
 
+(Requests to http://localhost:4200/ivy/ are proxied to http://localhost:8081/ivy/)
+
 ## Troubleshooting
 * If a Basic Authentication dialog pops up use following test credentials: user/user.
-* If a file like angular/index.html is not found you will most likely have to build the SPA first. (It will out the SPA to `/webContent/angular/`)
+* If a file like angular/index.html is not found you will most likely have to build the SPA first. (It will output the SPA to `/webContent/angular/`)
