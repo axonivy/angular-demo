@@ -30,8 +30,29 @@
             </mat-list-item>
           </mat-nav-list>
         </mat-tab>
-        <mat-tab label="Settings">
-          <span>Settings</span>
+        <mat-tab label="User">
+          <br />
+          <div align="center">
+            <button mat-raised-button color="primary" (click)="getCurrentUser()">Get current user info</button>
+          </div>
+          <br />
+          <div *ngIf="currentUser != null">
+            <mat-card class="userinfo-card">
+              <mat-card-header>
+                <mat-card-title>{{currentUser.displayName}}</mat-card-title>
+                <mat-card-subtitle>User Info</mat-card-subtitle>
+              </mat-card-header>
+              <mat-card-content>
+                <p>
+                  Member name: {{currentUser.memberName}}
+                </p>
+                <p>
+                  Email address: {{currentUser.emailAddress}}
+                </p>
+              </mat-card-content>
+            </mat-card>
+            <br />
+          </div>
         </mat-tab>
       </mat-tab-group>
 

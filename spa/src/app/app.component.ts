@@ -8,6 +8,7 @@ import 'rxjs/add/operator/filter';
 import { DialogComponent } from './dialog/dialog.component';
 import { TaskService } from 'app/taskservice';
 import { TaskCreatorService } from 'app/taskcreatorservice';
+import { CurrentUserService, UserInfo } from 'app/currentuserservice';
 
 @Component({
   selector: 'app-root',
@@ -20,12 +21,15 @@ export class AppComponent implements OnInit, OnDestroy {
 
   selectedTask: Task = null;
 
+  currentUser: UserInfo;
+
   sub: any;
 
   isDarkTheme = false;
 
   constructor(private route: ActivatedRoute, private router: Router, private taskService: TaskService,
     private taskCreatorService: TaskCreatorService,
+    private currentUserService: CurrentUserService,
     iconRegistry: MatIconRegistry,
     private sanitizer: DomSanitizer, private dialog: MatDialog) {
     // To avoid XSS attacks, the URL needs to be trusted from inside of your application.
@@ -65,13 +69,23 @@ export class AppComponent implements OnInit, OnDestroy {
 
         this.taskCreatorService.createTask(task.name, task.description)
           .subscribe(r => {
-            console.log(`task creation status code: ${r}`)
+            console.log(`task creation status code: ${r.status}`)
             // TODO error handling
             this.taskService
               .getAll()
               .subscribe(t => this.tasks = t);
           });
       });
+  }
+
+  getCurrentUser() {
+    this.currentUserService.currentUser()
+    .subscribe(u => {
+      console.log(`retrieved current user: ${u.memberName}`)
+      // TODO error handling
+
+      this.currentUser = u;
+    });
   }
 
 

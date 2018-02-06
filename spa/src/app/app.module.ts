@@ -33,6 +33,7 @@ import { AppRoutingModule } from 'app/app-routing.module';
 import { APP_BASE_HREF } from '@angular/common';
 import { getBaseLocation } from 'app/shared/path.util';
 import { TaskCreatorService } from 'app/taskcreatorservice';
+import { CurrentUserService } from 'app/currentuserservice';
 
 
 @NgModule({
@@ -72,7 +73,8 @@ import { TaskCreatorService } from 'app/taskcreatorservice';
     useFactory: getBaseLocation
   },
   TaskService,
-  TaskCreatorService],
+  TaskCreatorService,
+  CurrentUserService],
   entryComponents: [DialogComponent],
   bootstrap: [AppComponent]
 })

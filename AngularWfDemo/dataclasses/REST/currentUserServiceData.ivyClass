@@ -1,0 +1,4 @@
+currentUserServiceData #class
+REST #namespace
+user ch.ivyteam.ivy.security.IUser #field
+user PERSISTENT #fieldModifier
