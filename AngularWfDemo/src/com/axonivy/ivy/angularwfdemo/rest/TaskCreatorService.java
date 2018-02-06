@@ -19,7 +19,7 @@ public class TaskCreatorService {
 	@POST
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response create(TaskToCreate taskToCreate) {
-		ITask task = SubProcessCall.withPath("REST/createTask")
+		ITask task = SubProcessCall.withPath("REST/taskCreator")
 				.withParam("taskName", taskToCreate.taskName)
 				.withParam("taskDescription", taskToCreate.getTaskDescription())
 				.call()
@@ -34,7 +34,7 @@ public class TaskCreatorService {
 						UriBuilder
 						.fromPath("{applicationName}/" + appRelativeUri)
 								.build(task.getApplication().getName(), task.getId()))
-								.entity(new TaskMeta(task))
+								.entity(new CreatedTask(task))
 								.build();
 	}
 	
@@ -51,13 +51,13 @@ public class TaskCreatorService {
 		}
 	}
 
-	public static class TaskMeta {
+	public static class CreatedTask {
 		public final long id;
 		public final String name;
 		public final String description;
 		public final String activator;
 
-		public TaskMeta(ITask task) {
+		public CreatedTask(ITask task) {
 			this.id = task.getId();
 			this.name = task.getName();
 			this.description = task.getDescription();
