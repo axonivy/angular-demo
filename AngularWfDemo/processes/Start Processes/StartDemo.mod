@@ -12,39 +12,29 @@ So0 @MessageFlowInP-0n messageIn messageIn #zField
 So0 @MessageFlowOutP-0n messageOut messageOut #zField
 So0 @TextInP .xml .xml #zField
 So0 @TextInP .responsibility .responsibility #zField
-So0 @StartRequest f0 '' #zField
-So0 @EndRequest f3 '' #zField
-So0 @PushWFArc f1 '' #zField
+So0 @InfoButton f2 '' #zField
 >Proto So0 So0 StartDemo #zField
-So0 f0 outLink start.ivp #txt
-So0 f0 type com.axonivy.ivy.angularwfdemo.Data #txt
-So0 f0 inParamDecl '<> param;' #txt
-So0 f0 actionDecl 'com.axonivy.ivy.angularwfdemo.Data out;
-' #txt
-So0 f0 guid 161426C666BEF9DD #txt
-So0 f0 requestEnabled true #txt
-So0 f0 triggerEnabled false #txt
-So0 f0 callSignature start() #txt
-So0 f0 caseData businessCase.attach=true #txt
-So0 f0 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+So0 f2 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <elementInfo>
     <language>
-        <name>start.ivp</name>
+        <name>To Start the Angular Single Page application open a Browser and go to following URL:
+
+http://localhost:8081/ivy/page/designer/AngularWfDemo/angular/index.html</name>
+        <nameStyle>84,7,9
+1,7,10
+1,7,10
+72,7,14
+</nameStyle>
+        <tool>
+            <toolName>Angular SPA</toolName>
+            <url>http://localhost:8081/ivy/page/designer/AngularWfDemo$1/angular/index.html</url>
+        </tool>
     </language>
 </elementInfo>
 ' #txt
-So0 f0 @C|.responsibility Everybody #txt
-So0 f0 81 49 30 30 -21 17 #rect
-So0 f0 @|StartRequestIcon #fIcon
-So0 f3 type com.axonivy.ivy.angularwfdemo.Data #txt
-So0 f3 template "angular\\index.html" #txt
-So0 f3 337 49 30 30 0 15 #rect
-So0 f3 @|EndRequestIcon #fIcon
-So0 f1 expr out #txt
-So0 f1 111 64 337 64 #arcP
+So0 f2 48 50 480 60 -233 -24 #rect
+So0 f2 @|IBIcon #fIcon
 >Proto So0 .type com.axonivy.ivy.angularwfdemo.Data #txt
 >Proto So0 .processKind NORMAL #txt
 >Proto So0 0 0 32 24 18 0 #rect
 >Proto So0 @|BIcon #fIcon
-So0 f0 mainOut f1 tail #connect
-So0 f1 head f3 mainIn #connect

@@ -22,7 +22,7 @@ Build the code for the integration into the ivy Project with:
     npm run build-prod
 
 ## Running the ivy Project
-After building you can import the ivy project `AngularWfDemo` into the Axon.ivy Designer (do not copy the project to the workspace to keep the project side-by-side with the spa project folder) and execute the `start.ivp` Link to start the Angular based web frontend. Via "Create Task" you can trigger a REST request in ivy that will create a new ivy task, which will be displayed in the task list of the SPA and of the designer. These tasks have a HTML Dialog attached which is displayed inside an iframe.
+After building you can import the ivy project `AngularWfDemo` into the Axon.ivy Designer (do not copy the project to the workspace to keep the project side-by-side with the spa project folder) and open the `StartDemo` process to see how to start the Angular based web frontend. Via "Create Task" you can trigger a REST request in ivy that will create a new ivy task, which will be displayed in the task list of the SPA and of the designer. These tasks have a HTML Dialog attached which is displayed inside an iframe.
 
 ![Angular project integrated to ivy](screenshot-angular-wf-demo.png)
 
