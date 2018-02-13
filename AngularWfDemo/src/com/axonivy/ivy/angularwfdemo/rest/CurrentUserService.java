@@ -23,6 +23,10 @@ public class CurrentUserService {
 				.call()
 				.get("user", IUser.class);
 		
+		if (user == null)
+		{
+			return Response.status(Status.FORBIDDEN).build();
+		}
 		Ivy.log().info("Got information for user " + user.getMemberName());
 
 		return Response
