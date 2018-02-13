@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HttpClientXsrfModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -28,12 +28,13 @@ import {
 
 import 'hammerjs';
 import { TaskService } from 'app/taskservice';
-import { HttpModule } from '@angular/http';
 import { AppRoutingModule } from 'app/app-routing.module';
 import { APP_BASE_HREF } from '@angular/common';
 import { getBaseLocation } from 'app/shared/path.util';
 import { TaskCreatorService } from 'app/taskcreatorservice';
 import { CurrentUserService } from 'app/currentuserservice';
+import { HttpModule } from '@angular/http';
+import { AddCsrfHeaderInterceptor } from 'app/AddCsrfHeaderInterceptor';
 
 
 @NgModule({
@@ -44,7 +45,7 @@ import { CurrentUserService } from 'app/currentuserservice';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule,
+    HttpModule, //TODO remove (switch taskservice to new HttpClient)
     HttpClientModule,
     BrowserAnimationsModule,
     AppRoutingModule,
@@ -71,6 +72,11 @@ import { CurrentUserService } from 'app/currentuserservice';
   providers: [{
     provide: APP_BASE_HREF,
     useFactory: getBaseLocation
+  },
+  {
+    provide: HTTP_INTERCEPTORS,
+    useClass: AddCsrfHeaderInterceptor,
+    multi: true,
   },
   TaskService,
   TaskCreatorService,
