@@ -12,7 +12,6 @@ import ch.ivyteam.ivy.environment.Ivy;
 import ch.ivyteam.ivy.process.call.SubProcessCall;
 import ch.ivyteam.ivy.workflow.ITask;
 
-//TODO add permission check
 @Path("createTask")
 public class TaskCreatorService {
 
