@@ -11,14 +11,12 @@ import ch.ivyteam.ivy.environment.Ivy;
 import ch.ivyteam.ivy.process.call.SubProcessCall;
 import ch.ivyteam.ivy.security.IUser;
 
-import com.axonivy.ivy.angularwfdemo.rest.TaskCreatorService.TaskToCreate;
-
 @Path("currentUser")
 public class CurrentUserService {
 	
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
-	public Response create(TaskToCreate taskToCreate) {
+	public Response currentUser() {
 		IUser user = SubProcessCall.withPath("REST/currentUserService")
 				.call()
 				.get("user", IUser.class);
