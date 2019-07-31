@@ -1,6 +1,6 @@
 {
-  "short_name": "Angular Workflow PWA Demo",
-  "name": "Angular Workflow Demo for Progressive Web App",
+  "short_name": "Angular Workflow Demo",
+  "name": "Angular Workflow Demo as PWA",
   "icons": [
   {
   "src":"ivy256.png",
