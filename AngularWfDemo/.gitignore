@@ -1,7 +1,6 @@
 # Mac
 .DS_Store
 
-
 log/
 target/
 
@@ -11,3 +10,6 @@ src_dataClasses/*
 src_wsproc/*
 /classes/
 /lib/
+
+#copied by angular
+webContent/angular
