@@ -1,0 +1,15 @@
+{
+  "short_name": "Angular Workflow PWA Demo",
+  "name": "Angular Workflow Demo for Progressive Web App",
+  "icons": [
+  {
+  "src":"ivy256.png",
+  "sizes": "256x256",
+  "type": "image/png"
+  }
+  ],
+  "start_url": "index.html",
+  "background_color": "#e05a47",
+  "theme_color": "#e05a47",
+  "display": "fullscreen"
+}
