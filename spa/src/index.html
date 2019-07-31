@@ -5,8 +5,27 @@
   <title>Angular Workflow Demo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <!-- Link PWA manifest -->
+  <link rel="manifest" href="manifest.webmanifest"/>
 </head>
 <body>
   <app-root>Loading...</app-root>
+
+  <script>
+    // CODELAB: Register service worker.
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function() {
+      navigator.serviceWorker.register('serviceworker.js').then(function(registration) {
+        console.log('Registered successfully');
+      }, function(err) {
+        console.log('ServiceWorker registration failed: ', err);
+      }).catch(function(err) {
+        console.log(err);
+      });
+    });
+  } else {
+    console.log('ServiceWorker is not supported');
+  }
+  </script>
 </body>
 </html>

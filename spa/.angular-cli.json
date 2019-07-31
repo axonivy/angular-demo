@@ -9,7 +9,10 @@
       "outDir": "../AngularWfDemo/webContent/angular",
       "assets": [
         "assets",
-        "favicon.ico"
+        "favicon.ico",
+        "manifest.webmanifest",
+        "serviceworker.js",
+        "ivy256.png"
       ],
       "index": "index.html",
       "main": "main.ts",

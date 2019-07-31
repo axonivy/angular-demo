@@ -2,6 +2,9 @@
 
 Demonstrates how Axon.ivy can be used in conjunction with client-side JavaScript Frameworks like Angular, React.
 
+This demo is also registered as a progressive web application, so it can be installed in your (compatible) browser.
+It was tested with Chrome v76.0.3809.87 64-bit on Windows 10 with Ivy Designer 7.0.12.
+
 Beta
 
 ## Technologies
